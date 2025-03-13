@@ -1,3 +1,5 @@
+the websit is 'https://yiyang-bai.github.io/hw3/index.html'
+
 1. Fonts and Basic Typography
 Implemented 'Arial', sans-serif for clean and modern readability.
 Line height set to 1.5 for better text spacing.
