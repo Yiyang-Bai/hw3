@@ -164,7 +164,6 @@ socialMediaAvg.then(function(data) {
 const socialMediaTime = d3.csv("socialMediaTime.csv");
 
 socialMediaTime.then(function(data) {
-    // Convert string values to numbers
     data.forEach(function(d) {
         d.AvgLikes = +d.AvgLikes;
     });
@@ -180,7 +179,6 @@ socialMediaTime.then(function(data) {
         .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    // Set up scales
     const xScale = d3.scalePoint()
         .domain(data.map(d => d.Date))
         .range([0, width])
@@ -190,7 +188,6 @@ socialMediaTime.then(function(data) {
         .domain([0, d3.max(data, d => d.AvgLikes) * 1.1])
         .range([height, 0]);
 
-    // Draw the axis, rotating text to prevent overlap
     svg.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(xScale))
@@ -201,14 +198,12 @@ socialMediaTime.then(function(data) {
     svg.append("g")
         .call(d3.axisLeft(yScale));
 
-    // Add x-axis label
     svg.append("text")
         .attr("x", width / 2)
         .attr("y", height + margin.bottom - 10)
         .style("text-anchor", "middle")
         .text("Date");
 
-    // Add y-axis label
     svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height / 2)
@@ -216,7 +211,6 @@ socialMediaTime.then(function(data) {
         .style("text-anchor", "middle")
         .text("Average Number of Likes");
 
-    // Draw the line with curve
     const line = d3.line()
         .x(d => xScale(d.Date))
         .y(d => yScale(d.AvgLikes))
@@ -225,18 +219,17 @@ socialMediaTime.then(function(data) {
     svg.append("path")
         .datum(data)
         .attr("fill", "none")
-        .attr("stroke", "#7b2cbf")  // Change to a vibrant purple
+        .attr("stroke", "#7b2cbf")  
         .attr("stroke-width", 3)
         .attr("d", line);
 
-    // Add circles at each data point
     svg.selectAll(".dot")
         .data(data)
         .enter().append("circle")
         .attr("cx", d => xScale(d.Date))
         .attr("cy", d => yScale(d.AvgLikes))
         .attr("r", 6)
-        .attr("fill", "#ff8c00") // Use orange for contrast
+        .attr("fill", "#ff8c00") 
         .attr("stroke", "black")
         .attr("stroke-width", 1.5)
         .on("mouseover", function(event, d) {

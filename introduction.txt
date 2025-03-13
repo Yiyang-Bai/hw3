@@ -1,0 +1,33 @@
+1. Fonts and Basic Typography
+Implemented 'Arial', sans-serif for clean and modern readability.
+Line height set to 1.5 for better text spacing.
+Text color: dark gray (#222) for contrast.
+Background color: off-white (#f9f9f9) for a soft appearance.
+2. Custom Color Scheme
+Defined a simplified color palette using CSS variables:
+Primary color: Deep blue (#3366cc)
+Secondary color: Light blue (#6699ff)
+Accent color: Warm orange (#ff9900)
+Text color: Dark gray (#222)
+Background color: Light gray (#f9f9f9)
+3. Navigation Bar Styling
+Sticky navbar with a semi-transparent background.
+Navigation links centered and evenly spaced.
+Hover effect: Links change color with a subtle underline animation.
+4. Main Content Area
+Max width: 1100px, centered for balanced spacing.
+Consistent padding to improve readability.
+5. Home Page Design
+Centered hero section with a welcoming message.
+Profile image with rounded corners and soft shadow.
+Introduction text placed in a card-style box with subtle shadow.
+6. About Page Styling
+Grid layout for a structured look.
+Images and text side by side, shifting to a vertical layout on smaller screens.
+Hover zoom effect on images.
+7. Responsive Design
+On screens below 768px, content shifts to stacked layout.
+Font sizes adjust dynamically for readability.
+8. Interactive Effects
+Smooth hover effects on links, buttons, and images.
+Footer links highlight on hover for a subtle interactive touch.
